@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}To Do{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}" />
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+        <!-- datetimepicker -->
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+        <!-- favicon -->
+    </head>
+    <body>
+      <nav class="navbar navbar-default" id="nav">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-ok"></span> TO DO</a>
+          </div>
+          <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="{{ path('task_index') }}">TO DO</a></li>
+              <li><a href="{{ path('task_done') }}">COMPLETED TASKS</a></li>
+              <li><a href="/priority">PRIORITIES</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+      <script src="{{ asset('js/jquery.js') }}"></script>
+      <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+      <!-- datetimepicker -->
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script>
+        jQuery(document).ready(function() {
+
+          jQuery(function() {
+            jQuery( ".datepicker" ).datepicker();
+          });
+
+        });
+      </script>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+      {% for task in tasks if task.done == done %}
+      <div class="row box">
+          <!-- <div class="col-md-1 col-xs-2">
+            <input type="checkbox" value="" id="checkbox">
+          </div> -->
+          <div class="col-md-10 col-xs-10">
+            <p class="name"><a href="{{ path('task_show', { 'id': task.id }) }}">{{ task.name }}</a></p>
+            <p>{% if task.deadline %}{{ task.deadline|date('Y-m-d') }}{% endif %} | {{ task.priority.name }}</p>
+          </div>
+          <div class="col-md-2">
+            <a class="btn btn-danger btn-sm pull-right" href="{{ path('task_delete_by_get', { 'id': task.id }) }}" role="button"><span class="glyphicon glyphicon-remove"></span></a>
+          </div>
+      </div>
+      {% endfor %}
+    </div>
+
+{% endblock %}

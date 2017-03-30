@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+  <div class="container">
+    <div class="row box">
+
+      <h1>Task</h1>
+
+      <table class="table table-hover">
+          <tbody>
+              <tr>
+                  <th>Name</th>
+                  <td>{{ task.name }}</td>
+              </tr>
+              <tr>
+                  <th>Details</th>
+                  <td>{{ task.details }}</td>
+              </tr>
+              <tr>
+                  <th>Deadline</th>
+                  <td>{% if task.deadline %}{{ task.deadline|date('Y-m-d') }}{% endif %}</td>
+              </tr>
+              <tr>
+                  <th>Done</th>
+                  <td>{% if task.done %}Yes{% else %}No{% endif %}</td>
+              </tr>
+          </tbody>
+      </table>
+
+      <div>
+        <a href="{{ path('task_index') }}">< Back to the list</a>
+
+        {{ form_start(delete_form) }}
+            <input class="btn btn-danger pull-right" type="submit" value="Delete">
+        {{ form_end(delete_form) }}
+        <a class="btn btn-primary pull-right" href="{{ path('task_edit', { 'id': task.id }) }}" role="button">Edit</a>
+
+      </div>
+
+    </div>
+  </div>
+
+
+{% endblock %}

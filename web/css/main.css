@@ -1,0 +1,39 @@
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 15px; }
+
+.navbar-default {
+  background-color: #35A6FF; }
+
+#nav a {
+  color: #FFF; }
+
+.btn {
+  margin-right: 3px;
+  border: none; }
+
+.btn-primary {
+  background-color: #35A6FF; }
+
+.box {
+  padding: 7px 10px;
+  margin-bottom: 5px;
+  background-color: #F1F2EB;
+  box-shadow: 1px 1px 1px grey;
+  min-height: 50px; }
+  @media screen and (min-width: 992px) {
+    .box {
+      width: 80%;
+      margin-right: auto;
+      margin-left: auto; } }
+
+.name {
+  font-size: 1.2em; }
+
+.modal-header {
+  background-color: #35A6FF; }
+
+.ui-datepicker {
+  z-index: 1151 !important; }
+
+/*# sourceMappingURL=main.css.map */

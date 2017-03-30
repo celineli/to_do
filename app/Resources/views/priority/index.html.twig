@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+
+      {% for priority in priorities %}
+      <div class="row box">
+        <div class="col-md-10">
+          <p class="name"><a href="{{ path('priority_show', { 'id': priority.id }) }}">{{ priority.name }}</a></p>
+          <p>Level: {{ priority.weight }}</p>
+        </div>
+        <div class="col-md-2">
+          <a class="btn btn-primary btn-sm pull-right" href="{{ path('priority_edit', { 'id': priority.id }) }}" role="button"><span class="glyphicon glyphicon-pencil"></a>
+        </div>
+        </div>
+
+      {% endfor %}
+
+      <div class="row box">
+        <a class="btn btn-primary btn-lg" href="{{ path('priority_new') }}" role="button">+</a>
+      </div>
+
+    </div>
+
+{% endblock %}

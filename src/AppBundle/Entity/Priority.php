@@ -44,6 +44,7 @@ class Priority
        *@ORM\OneToMany(targetEntity="Task", mappedBy="priority")
        */
        private $tasks;
+
        public function __construct(){
               $this->tasks = new ArrayCollection();
        }
@@ -139,7 +140,7 @@ class Priority
      */
      public function getTasks()
      {
-            return $this->$tasks;
+            return $this->tasks;
      }
 
      /**

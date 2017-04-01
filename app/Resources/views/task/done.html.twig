@@ -13,6 +13,7 @@
             <p>{% if task.deadline %}{{ task.deadline|date('Y-m-d') }}{% endif %} | {{ task.priority.name }}</p>
           </div>
           <div class="col-md-2">
+            <a class="btn btn-primary btn-sm pull-right" href="{{ path('task_edit', { 'id': task.id }) }}" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
             <a class="btn btn-danger btn-sm pull-right" href="{{ path('task_delete_by_get', { 'id': task.id }) }}" role="button"><span class="glyphicon glyphicon-remove"></span></a>
           </div>
       </div>

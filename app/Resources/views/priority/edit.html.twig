@@ -11,9 +11,11 @@
           {{ form_widget(edit_form) }}
           <input class="btn btn-primary pull-right" type="submit" value="Edit" />
       {{ form_end(edit_form) }}
+      {% if priority.tasks.isEmpty() %}
       {{ form_start(delete_form) }}
           <input class="btn btn-danger pull-right" type="submit" value="Delete">
       {{ form_end(delete_form) }}
+      {% endif %}
       <div>
         <a href="{{ path('priority_index') }}">< Back to the list</a>
       </div>
